@@ -28,7 +28,6 @@ class Example : public BaseApp {
             node3->setPosition(20.0F, 0.0F, 0.0F); 
             node3->translate(0.0F, 0.0F, 10.0F, Ogre::Node::TS_WORLD);
             std::cout << "Node3 position: " << node3->_getDerivedPosition() << std::endl;
-
         }
 };
 
