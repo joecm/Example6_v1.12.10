@@ -12,14 +12,14 @@ class Example : public BaseApp {
             Ogre::SceneNode* node = mScnMgr->getRootSceneNode()->createChildSceneNode("Node1");
             node->attachObject(ent);
             node->setPosition(0.0F, 0.0F, 400.0F);
-            node->yaw(Ogre::Degree(180.0F)); // atención a esto que varía la posición de los ejes
+            node->yaw(Ogre::Degree(180.0F), Ogre::Node::TS_LOCAL); // atención a esto que varía la posición de los ejes
             std::cout << "Node1 position: " << node->_getDerivedPosition() << std::endl;
 
             Ogre::Entity* ent2 = mScnMgr->createEntity("MyEntity2","Sinbad.mesh"); 
             Ogre::SceneNode* node2 = node->createChildSceneNode("Node2");
             node2->attachObject(ent2); 
             node2->setPosition(10.0F, 0.0F, 0.0F); 
-            node2->translate(0.0F, 0.0F, 10.0F);
+            node2->translate(0.0F, 0.0F, 10.0F, Ogre::Node::TS_PARENT);
             std::cout << "Node2 position: " << node2->_getDerivedPosition() << std::endl;
 
             Ogre::Entity* ent3 = mScnMgr->createEntity("MyEntity3","Sinbad.mesh"); 
